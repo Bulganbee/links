@@ -1,10 +1,17 @@
+:root {
+	--root-size: 16px;
+	--root-top-padding: 10px;
+	--root-bottom-padding: 10px;
+	--root-top-margin: 10px;
+}
 
 h1 {
 	font-size: 64px;
 }
-img {
+.hero-image {
 	width: 100%;
 	height: 60vh;
 	object-fit: cover;
 	overflow: hidden;
 }
+

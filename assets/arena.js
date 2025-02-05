@@ -56,6 +56,7 @@ let renderBlock = (block) => {
 	// Images!
 	else if (block.class == 'Image') {
 		// …up to you!
+
 	let imageItem = 
         `
         <li>
@@ -75,6 +76,15 @@ let renderBlock = (block) => {
 	// Text!
 	else if (block.class == 'Text') {
 		// …up to you!
+		let textItem = 
+        `
+        <li>
+            <p><em>Text</em></p>
+            <h3>${ block.title }</h3>
+            <div>${ block.description_html ? block.description_html : '' }</div>
+        </li>
+        `;
+    channelBlocks.insertAdjacentHTML('beforeend', textItem);
 	}
 
 	// Uploaded (not linked) media…
@@ -99,6 +109,21 @@ let renderBlock = (block) => {
 		// Uploaded PDFs!
 		else if (attachment.includes('pdf')) {
 			// …up to you!
+			let pdfItem = 
+        `
+        <li>
+            <p><em>PDF</em></p>
+			 <picture>
+                <source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
+                <source media="(max-width: 640px)" srcset="${ block.image.large.url }">
+                <img src="${ block.image.original.url }" alt="${ block.title }">
+            </picture>
+            <h3>${ block.title }</h3>
+            <p><a href="${ attachment }" target="_blank">View PDF ↗</a></p>
+            ${ block.description_html ? block.description_html : '' }
+        </li>
+        `;
+    channelBlocks.insertAdjacentHTML('beforeend', pdfItem);
 		}
 
 		// Uploaded audio!

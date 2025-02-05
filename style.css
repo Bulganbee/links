@@ -68,3 +68,9 @@ body {
 	margin: 10px;
 	font-family: Arial, Helvetica, sans-serif;
 }
+.article-cover-image {
+	width: 40%;
+	height: 60vh;
+	object-fit: cover;
+	overflow: hidden;
+}

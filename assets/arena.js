@@ -1,3 +1,4 @@
+
 // This allows us to process/render the descriptions, which are in Markdown!
 // More about Markdown: https://en.wikipedia.org/wiki/Markdown
 let markdownIt = document.createElement('script')
@@ -55,7 +56,21 @@ let renderBlock = (block) => {
 	// Images!
 	else if (block.class == 'Image') {
 		// …up to you!
-	}
+	let imageItem = 
+        `
+        <li>
+            <p><em>Image</em></p>
+            <picture>
+                <source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
+                <source media="(max-width: 640px)" srcset="${ block.image.large.url }">
+                <img src="${ block.image.original.url }" alt="${ block.title }">
+            </picture>
+            <h3>${ block.title }</h3>
+            ${ block.description_html ? block.description_html : '' }
+        </li>
+        `;
+    channelBlocks.insertAdjacentHTML('beforeend', imageItem);
+}
 
 	// Text!
 	else if (block.class == 'Text') {

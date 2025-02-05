@@ -5,7 +5,7 @@
 	--root-top-margin: 10px;
 }
 
-h1 {
+.mainh1 {
 	font-size: 64px;
 	margin-top: 30px;
 	font-weight: 700;
@@ -16,6 +16,21 @@ h1 {
 	font-size: 20px;
 	font-weight:400;
 	line-height: 142%;
+}
+.mainvisual {
+	position: relative;
+}
+.metadatadiv {
+	background-color: #F3F3F3;
+	color: black;
+	padding: 10px;
+	width: 40vh;
+	position: absolute;
+	z-index: 10;
+}
+.titeonmeta {
+	font-size: 16px;
+	font-weight: 600;
 }
 
 .hero-image {

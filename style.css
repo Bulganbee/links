@@ -21,23 +21,24 @@
 .categories {
 	font-size: 20px;
 	justify-content: space-evenly;
-	
 }
 .mainintro {
 	font-size: 20px;
 	font-weight:400;
 	line-height: 142%;
 }
-.mainvisual {
-	position: relative;
+.firstvideo {
+	position:relative;
 }
 .metadatadiv {
+	position: absolute;
 	background-color: #F3F3F3;
 	color: black;
 	padding: 10px;
 	width: 40vh;
-	position: absolute;
 	z-index: 10;
+	top: 124%;
+	right: 4%;
 }
 .titeonmeta {
 	font-size: 16px;

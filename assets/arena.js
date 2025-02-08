@@ -81,6 +81,7 @@ let renderBlock = (block) => {
         <li>
             <p><em>Text</em></p>
             <h3>${ block.title }</h3>
+			<p>${block.content}</p>
             <div>${ block.description_html ? block.description_html : '' }</div>
         </li>
         `;
@@ -119,7 +120,7 @@ let renderBlock = (block) => {
                 <img src="${ block.image.original.url }" alt="${ block.title }">
             </picture>
             <h3>${ block.title }</h3>
-            <p><a href="${ attachment }" target="_blank">View PDF ↗</a></p>
+           <p><a href="${ block.attachment.url }" target="_blank">View PDF ↗</a></p>
             ${ block.description_html ? block.description_html : '' }
         </li>
         `;
@@ -133,7 +134,7 @@ let renderBlock = (block) => {
 				`
 				<li>
 					<p><em>Audio</em></p>
-					<audio controls src="${ block.attachment.url }"></video>
+					<audio controls src="${ block.attachment.url }"></audio>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', audioItem)

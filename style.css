@@ -20,6 +20,16 @@ audio {
     width: 300px;
     height: 54px;
 }
+li h3 {
+	
+	font-size: 18px;
+	font-weight: 600;
+	color: #b71e1e;
+  }
+
+  li > :where(p, ul, ol) {
+	color: #34b521;
+  }
 
 #channel-title {
 	font-size: 64px;
@@ -68,18 +78,32 @@ video {
 }
 
 
-/* @media (min-width:1100px) {
-	/* .article-cover-image {
-		width: 40%;
-		height: 50vh;
-		object-fit: cover;
-		overflow: hidden;
-	}
-	.article-data-block {
-		background-color: #F3F3F3;
-		color: black;
-		padding: 10px;
-		margin-left: 30px;
-		width: 45vh;
-	} */
-/* } */
+@media (min-width:1100px) {
+#main-image {
+	display: block;
+	width: 66%;
+	position: relative;
+}
+#channel-title {
+	position: absolute;
+	top: 0;
+	right: 30px;
+	font-size: 120px;
+}
+#channel-description {
+	margin-top: 60px;
+	position: absolute;
+	top: 20%;
+	width: 50ch;
+	right: 30px;
+	font-size: 24px;
+	line-height: 148%;
+	background-color: rgba(0, 0, 0, 0.5);
+	padding: 12px;
+}
+header {
+	margin-top: 60px;
+	margin-bottom: 30px;
+	position: relative;
+}
+ }

@@ -39,7 +39,7 @@ let renderBlock = (block) => {
 		let linkItem =
 			`
 			<li>
-				<p><em>Link</em></p>
+				
 				<picture>
 					<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
 					<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
@@ -60,7 +60,7 @@ let renderBlock = (block) => {
 	let imageItem = 
         `
         <li>
-            <p><em>Image</em></p>
+            
             <picture>
                 <source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
                 <source media="(max-width: 640px)" srcset="${ block.image.large.url }">
@@ -79,7 +79,7 @@ let renderBlock = (block) => {
 		let textItem = 
         `
         <li>
-            <p><em>Text</em></p>
+           
             <h3>${ block.title }</h3>
 			<p>${block.content}</p>
             <div>${ block.description_html ? block.description_html : '' }</div>
@@ -113,7 +113,7 @@ let renderBlock = (block) => {
 			let pdfItem = 
         `
         <li>
-            <p><em>PDF</em></p>
+            
 			 <picture>
                 <source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
                 <source media="(max-width: 640px)" srcset="${ block.image.large.url }">

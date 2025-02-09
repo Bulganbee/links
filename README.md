@@ -1,7 +1,7 @@
-<h1>Design Born & Raised In NYC</h1>
+<h1>Motion of NYC</h1>
 <p>
-The <i>Links</i> is a project from the <i>Typography and Interaction</i> program within MPS Communication Design at Parsons, led by professors Michael Fehrenbach and Eric Li. At the start, Amely Richter and I collected over 40+ media files under the theme of <i>Design born & raised in NYC</i> on an API platform called Are.na. 
-Then, I designed and coded a website to showcase the collection.</p>
+The <i>Links</i> is a project from the <i>Typography and Interaction</i> program within MPS Communication Design at Parsons, led by professors Michael Fehrenbach and Eric Li. At the start, Amely Richter and I collected over 60+ media files under the theme of <i>Motion of NYC</i> on an API platform called Are.na. 
+Then, I designed, curated and coded a website to showcase the collection.</p>
 <img width="1439" alt="Screenshot 2025-01-31 at 1 35 42 PM" src="https://github.com/user-attachments/assets/bee1d566-d062-414b-abb3-21347123c2e5" />
 
 <h2>Requirements:</h2>

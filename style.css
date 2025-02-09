@@ -4,11 +4,28 @@
 	--root-bottom-padding: 10px;
 	--root-top-margin: 10px;
 }
+body {
+	font-weight: 400;
+	font-family: "Hanken Grotesk", serif;
+	background-color: black;
+	color: #F3F3F3;
+	margin: 12px;
+}
+
+audio, img, iframe, video {
+    max-inline-size: 100%;
+    max-block-size: 100%;
+}
+audio {
+    width: 300px;
+    height: 54px;
+}
 
 #channel-title {
 	font-size: 64px;
+	font-family: "Inter", serif;
+	font-weight: 600;
 	margin-top: 30px;
-	font-weight: 700;
 	color: #F3F3F3;
 	margin-bottom: 10px;
 }
@@ -42,12 +59,7 @@ video {
 	object-fit: cover;
 	overflow: clip;
 }
-body {
-	background-color: black;
-	color: #F3F3F3;
-	margin: 10px;
-	font-family: Arial, Helvetica, sans-serif;
-}
+
 .article-cover-image {
 	width: 100%;
 	height: 40vh;

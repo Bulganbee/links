@@ -2,7 +2,7 @@
 <p>
 The <i>Links</i> is a project from the <i>Typography and Interaction</i> program within MPS Communication Design at Parsons, led by professors Michael Fehrenbach and Eric Li. At the start, Amely Richter and I collected over 60+ media files under the theme of <i>Motion of NYC</i> on an API platform called Are.na. 
 Then, I designed, curated and coded a website to showcase the collection.</p>
-<img width="1439" alt="Screenshot 2025-01-31 at 1 35 42 PM" src="https://github.com/user-attachments/assets/bee1d566-d062-414b-abb3-21347123c2e5" />
+<img width="1427" alt="Screenshot 2025-02-08 at 9 34 04 PM" src="https://github.com/user-attachments/assets/3b46dc13-ea3a-4514-91d1-d6c8a87f3cc8" />
 
 <h2>Requirements:</h2>
 <ul>

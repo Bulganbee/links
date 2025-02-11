@@ -137,6 +137,8 @@ let renderBlock = (block) => {
        			 <audio controls src="${block.attachment.url}">
 				 <source src="${block.attachment.url}" type="audio/mpeg">
     	    	</audio>
+				 <h3>${ block.title }</h3>
+            ${ block.description_html ? block.description_html : '' }
    			 	</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', audioItem)

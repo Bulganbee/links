@@ -65,7 +65,7 @@ li h3 {
 
 video {
 	width: 100%;
-	height: 64vh;
+	height: 100%;
 	object-fit: cover;
 	overflow: clip;
 }
@@ -78,7 +78,7 @@ video {
 }
 
 
-@media (min-width:1100px) {
+@media (min-width:1000px) {
 #main-image {
 	display: block;
 	width: 60%;
@@ -108,14 +108,14 @@ video {
 	top: 20%;
 	width: 50ch;
 	right: 80px;
-	font-size: 24px;
+	font-size: 32px;
 	line-height: 148%;
 	background-color: rgba(0, 0, 0, 0.7);
 	padding: 12px;
 }
 #channel-link {
 	text-align: right;
-	color: #b71e1e;
+	color: #8d8d8d;
 }
 #start-arrow {
 	margin-top: 30px;
@@ -132,7 +132,7 @@ header {
 
  #channel-blocks {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
     gap: 2rem;
     padding: 0;
     list-style: none;
@@ -154,7 +154,7 @@ header {
 
 #channel-blocks li picture {
     width: 100%;
-    aspect-ratio: 16/9;
+    /* aspect-ratio: 16/9; */
     overflow: hidden;
 }
 
@@ -174,20 +174,23 @@ header {
 }
 
 #channel-blocks li h3 {
-    font-size: 18px;
-    font-weight: 600;
+	margin-top: 6px;
+    font-size: 20px;
+    font-weight: 400;
     color: #F3F3F3;
     margin-bottom: 0.5rem;
 }
 
 #channel-blocks li p {
-    color: #F3F3F3;
-    font-size: 14px;
+	margin-top: 5px;
+    color: #cbcbcb;
+    font-size: 16px;
     margin: 0.5rem 0;
 }
 
 #channel-blocks li a {
-    color: #b71e1e;
+    color: #808080;
+	font-size: 13px;
     text-decoration: none;
 }
 

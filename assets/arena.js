@@ -47,7 +47,7 @@ let renderBlock = (block) => {
 				</picture>
 				<h3>${ block.title }</h3>
 				${ block.description_html }
-				<p><a href="${ block.source.url }">See the original ↗</a></p>
+				<p><a href="${ block.source.url }">Read the article ↗</a></p>
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)

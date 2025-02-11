@@ -133,7 +133,7 @@ let renderBlock = (block) => {
 			let audioItem =
 				`
 				<li>
-       			 <p><em>Audio</em></p>
+       			
        			 <audio controls src="${block.attachment.url}">
 				 <source src="${block.attachment.url}" type="audio/mpeg">
     	    	</audio>
@@ -154,7 +154,7 @@ let renderBlock = (block) => {
 			let linkedVideoItem =
 				`
 				<li>
-					<p><em>Linked Video</em></p>
+					
 					${ block.embed.html }
 				</li>
 				`

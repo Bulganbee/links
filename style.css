@@ -66,6 +66,13 @@ aside {
 /* Audio */
 
 /* PDF */
-#channel-blocks .block-image {
+/* #channel-blocks .block-image {
+	display: none;
+} */
+
+.show-video li {
 	display: none;
 }
+li.block-video {
+	display: block;
+} 

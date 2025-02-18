@@ -100,7 +100,7 @@ let renderBlock = (block) => {
 			// …still up to you, but we’ll give you the `video` element:
 			let videoItem =
 				`
-				<li class="block block-video">
+				<li class="block-video">
 					<p><em>Video</em></p>
 					<video controls src="${ block.attachment.url }"></video>
 				</li>
@@ -157,8 +157,8 @@ let renderBlock = (block) => {
 			// …still up to you, but here’s an example `iframe` element:
 			let linkedVideoItem =
 				`
-				<li>
-					
+				<li class="block-video">
+					<p><em>Video</em></p>
 					${ block.embed.html }
 				</li>
 				`

@@ -33,6 +33,8 @@ let placeChannelInfo = (data) => {
 let renderBlock = (block) => {
 	// To start, a shared `ul` where we’ll insert all our blocks
 	let channelBlocks = document.getElementById('channel-blocks')
+	let ImageBlocks = document.getElementById('image-blocks')
+	
 
 	// Links!
 	if (block.class == 'Link') {

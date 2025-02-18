@@ -32,46 +32,11 @@ video {
 	overflow: clip;
 }
 
-/* Header styling */
-/* aside is the channel description */
-aside {
-	color: blueviolet;
-}
-
-/* Links or articles */
-.block-link {
-	color: blue;
-}
-.date {
-	color: aqua;
-}
-
-/* Text */
-.block-text {
-	color: aquamarine;
-}
-.block-text h3 {
-	font-size: 32px;
-	color: #F3F3F3;
-}
-.block-text p  + p {
-	color: blueviolet;
-}
 .block-text .dates {
 	background-color: rgba(212, 16, 176, 0.823);
 }
-/* Images */
 
-/* Audio */
 
-/* PDF */
-
-/* .show-see li{
-	display: none;
-}
-li.block-video {
-	display: block;
-}  */
 
 
 

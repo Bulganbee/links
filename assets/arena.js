@@ -47,8 +47,8 @@ let renderBlock = (block) => {
                 <img src="${block.image.original.url}">
             </picture>
             <h3>${block.title}</h3>
-            ${block.description_html}
-            <p class="date">${block.created_at}</p>
+           <p> ${block.description_html}</p>
+            
             <p><a href="${block.source.url}">Read the article ↗</a></p>
         </li>`
         channelBlocks.insertAdjacentHTML('beforeend', linkItem)
@@ -61,7 +61,7 @@ let renderBlock = (block) => {
             <h3>${block.title}</h3>
             <p>${block.content}</p>
             <p>${block.description_html ? block.description_html : ''}</p>
-            <p class="date">${block.created_at}</p>
+           
         </li>`
         channelBlocks.insertAdjacentHTML('beforeend', textItem)
     }

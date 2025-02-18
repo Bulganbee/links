@@ -10,3 +10,36 @@ li.block-pdf {
 li.block-text {
 	display: block;
 }
+
+/* Text */
+.block-text {
+	color: aquamarine;
+}
+.block-text h3 {
+	font-size: 32px;
+	color: #F3F3F3;
+}
+.block-text p  + p {
+	color: blueviolet;
+}
+
+/* Links or articles */
+.block-link h3{
+	color: rgb(0, 0, 0);
+	font-size: 24px;
+	line-height: 140%;
+}
+.block-link p {
+	font-size: 17px;
+	font-weight: 400;
+	margin-top: 7px;
+	line-height: 145%;
+}
+.block-link {
+	margin: 10px;
+	margin-bottom: 20px;
+}
+.block-pdf {
+	margin: 10px;
+	margin-bottom: 20px;
+}

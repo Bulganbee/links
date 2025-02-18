@@ -1,6 +1,7 @@
 .show-see li{
 	display: none;
 }
+/* Images and video */
 li.block-video {
 	display: block;
 } 

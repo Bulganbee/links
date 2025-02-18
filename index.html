@@ -8,6 +8,7 @@
 	<!--Below is a meta element that tells the browser to render it at its actual size-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script defer src="assets/arena.js"></script>
+	<script defer src="assets/main.js"></script>
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 		</style>
@@ -21,8 +22,16 @@
 		<main>
 			<section class="container">
 				<h2>All blocks</h2>
-				<ul id="channel-blocks"></ul>
-				<ul class="blocks" id="text-blocks"></ul>
+				<ul>
+					<button id="show-images-button" >Images</button>
+					<button id="show-video-button" >Video</button>
+					<button id="show-link-button" >Link</button>
+					<button id="show-text-button" >Text</button>
+					<button id="show-pdf-button" >Pdf</button>
+				</ul>
+				<ul id="channel-blocks">
+				</ul>
+				<!-- <ul class="blocks" id="text-blocks"></ul> -->
 				<p><span id="channel-count"></span> blocks</p>
 			</section>
 		</main>

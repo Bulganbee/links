@@ -60,7 +60,7 @@ let renderBlock = (block) => {
 
 	let imageItem = 
         `
-        <li>
+        <li class="block block-image">
             
             <picture>
                 <source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
@@ -87,8 +87,8 @@ let renderBlock = (block) => {
 			<p class="dates">${block.created_at}</p>
         </li>
         `;
-		let textBlocks = document.getElementById('text-blocks')
-    textBlocks.insertAdjacentHTML('beforeend', textItem);
+		// let textBlocks = document.getElementById('text-blocks')
+		channelBlocks.insertAdjacentHTML('beforeend', textItem);
 	}
 
 	// Uploaded (not linked) media…
@@ -100,7 +100,7 @@ let renderBlock = (block) => {
 			// …still up to you, but we’ll give you the `video` element:
 			let videoItem =
 				`
-				<li>
+				<li class="block block-video">
 					<p><em>Video</em></p>
 					<video controls src="${ block.attachment.url }"></video>
 				</li>
@@ -115,7 +115,7 @@ let renderBlock = (block) => {
 			// …up to you!
 			let pdfItem = 
         `
-        <li>
+        <li class="block block-pdf">
             
 			 <picture>
                 <source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
@@ -135,7 +135,7 @@ let renderBlock = (block) => {
 			// …still up to you, but here’s an `audio` element:
 			let audioItem =
 				`
-				<li>
+				<li class="block block-audio">
        			
        			 <audio controls src="${block.attachment.url}">
 				 <source src="${block.attachment.url}" type="audio/mpeg">

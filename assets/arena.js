@@ -5,209 +5,146 @@ let markdownIt = document.createElement('script')
 markdownIt.src = 'https://cdn.jsdelivr.net/npm/markdown-it@14.0.0/dist/markdown-it.min.js'
 document.head.appendChild(markdownIt)
 
+let channelSlug = 'motion-of-nyc'
 
-
-// Okay, Are.na stuff!
-let channelSlug = 'motion-of-nyc' // The “slug” is just the end of the URL
-
-
-
-// First, let’s lay out some *functions*, starting with our basic metadata:
 let placeChannelInfo = (data) => {
-	// Target some elements in your HTML:
-	let channelTitle = document.getElementById('channel-title')
-	let channelDescription = document.getElementById('channel-description')
-	let channelCount = document.getElementById('channel-count')
-	let channelLink = document.getElementById('channel-link')
+    let channelTitle = document.getElementById('channel-title')
+    let channelDescription = document.getElementById('channel-description')
+    let channelCount = document.getElementById('channel-count')
+    let channelLink = document.getElementById('channel-link')
 
-	// Then set their content/attributes to our data:
-	channelTitle.innerHTML = data.title
-	channelDescription.innerHTML = window.markdownit().render(data.metadata.description) // Converts Markdown → HTML
-	channelCount.innerHTML = data.length
-	channelLink.href = `https://www.are.na/channel/${channelSlug}`
+    channelTitle.innerHTML = data.title
+    channelDescription.innerHTML = window.markdownit().render(data.metadata.description)
+    channelCount.innerHTML = data.length
+    channelLink.href = `https://www.are.na/channel/${channelSlug}`
 }
 
-
-
-// Then our big function for specific-block-type rendering:
 let renderBlock = (block) => {
-	// To start, a shared `ul` where we’ll insert all our blocks
-	let channelBlocks = document.getElementById('channel-blocks')
-	let ImageBlocks = document.getElementById('image-blocks')
-	
+    let channelBlocks = document.getElementById('channel-blocks')
 
-	// Links!
-	if (block.class == 'Link') {
-		let linkItem =
-			`
-			<li class="block block-link">
-				
-				<picture>
-					<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
-					<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
-					<img src="${ block.image.original.url }">
-				</picture>
-				<h3>${ block.title }</h3>
-				${ block.description_html }
-				<p class="date">${block.created_at}</p>
-				<p><a href="${ block.source.url }">Read the article ↗</a></p>
-			</li>
-			`
-		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
-	}
-
-	// Images!
-	else if (block.class == 'Image') {
-		// …up to you!
-
-	let imageItem = 
-        `
-        <li class="block block-image">
-            
+    // Images - part of "see"
+    if (block.class == 'Image') {
+        let imageItem = 
+        `<li class="block block-image">
             <picture>
-                <source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
-                <source media="(max-width: 640px)" srcset="${ block.image.large.url }">
-                <img src="${ block.image.original.url }" alt="${ block.title }">
+                <source media="(max-width: 428px)" srcset="${block.image.thumb.url}">
+                <source media="(max-width: 640px)" srcset="${block.image.large.url}">
+                <img src="${block.image.original.url}" alt="${block.title}">
             </picture>
-            <h3>${ block.title }</h3>
-            ${ block.description_html ? block.description_html : '' }
-        </li>
-        `;
-    channelBlocks.insertAdjacentHTML('beforeend', imageItem);
-}
+            <h3>${block.title}</h3>
+            ${block.description_html ? block.description_html : ''}
+        </li>`
+        channelBlocks.insertAdjacentHTML('beforeend', imageItem)
+    }
 
-	// Text!
-	else if (block.class == 'Text') {
-		// …up to you!
-		let textItem = 
-        `
-        <li class="block block-text">
-           
-            <h3>${ block.title }</h3>
-			<p>${block.content}</p>
-            <p>${ block.description_html ? block.description_html : '' }</p>
-			<p class="dates">${block.created_at}</p>
-        </li>
-        `;
-		// let textBlocks = document.getElementById('text-blocks')
-		channelBlocks.insertAdjacentHTML('beforeend', textItem);
-	}
-
-	// Uploaded (not linked) media…
-	else if (block.class == 'Attachment') {
-		let attachment = block.attachment.content_type // Save us some repetition
-
-		// Uploaded videos!
-		if (attachment.includes('video')) {
-			// …still up to you, but we’ll give you the `video` element:
-			let videoItem =
-				`
-				<li class="block-video">
-					<p><em>Video</em></p>
-					<video controls src="${ block.attachment.url }"></video>
-				</li>
-				`
-			channelBlocks.insertAdjacentHTML('beforeend', videoItem)
-			// More on video, like the `autoplay` attribute:
-			// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
-		}
-
-		// Uploaded PDFs!
-		else if (attachment.includes('pdf')) {
-			// …up to you!
-			let pdfItem = 
-        `
-        <li class="block block-pdf">
-            
-			 <picture>
-                <source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
-                <source media="(max-width: 640px)" srcset="${ block.image.large.url }">
-                <img src="${ block.image.original.url }" alt="${ block.title }">
+    // Links and PDFs - part of "read"
+    else if (block.class == 'Link') {
+        let linkItem =
+        `<li class="block block-link">
+            <picture>
+                <source media="(max-width: 428px)" srcset="${block.image.thumb.url}">
+                <source media="(max-width: 640px)" srcset="${block.image.large.url}">
+                <img src="${block.image.original.url}">
             </picture>
-            <h3>${ block.title }</h3>
-           <p><a href="${ block.attachment.url }" target="_blank">View PDF ↗</a></p>
-            ${ block.description_html ? block.description_html : '' }
-        </li>
-        `;
-    channelBlocks.insertAdjacentHTML('beforeend', pdfItem);
-		}
+            <h3>${block.title}</h3>
+            ${block.description_html}
+            <p class="date">${block.created_at}</p>
+            <p><a href="${block.source.url}">Read the article ↗</a></p>
+        </li>`
+        channelBlocks.insertAdjacentHTML('beforeend', linkItem)
+    }
 
-		// Uploaded audio!
-		else if (attachment.includes('audio')) {
-			// …still up to you, but here’s an `audio` element:
-			let audioItem =
-				`
-				<li class="block block-audio">
-       			
-       			 <audio controls src="${block.attachment.url}">
-				 <source src="${block.attachment.url}" type="audio/mpeg">
-    	    	</audio>
-				
-   			 	</li>
-				`
-			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
-			// More on audio: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
-		}
-	}
+    // Text - part of "read"
+    else if (block.class == 'Text') {
+        let textItem = 
+        `<li class="block block-text">
+            <h3>${block.title}</h3>
+            <p>${block.content}</p>
+            <p>${block.description_html ? block.description_html : ''}</p>
+            <p class="date">${block.created_at}</p>
+        </li>`
+        channelBlocks.insertAdjacentHTML('beforeend', textItem)
+    }
 
-	// Linked media…
-	else if (block.class == 'Media') {
-		let embed = block.embed.type
+    // Attachments (PDF, Audio, Video)
+    else if (block.class == 'Attachment') {
+        let attachment = block.attachment.content_type
 
-		// Linked video!
-		if (embed.includes('video')) {
-			// …still up to you, but here’s an example `iframe` element:
-			let linkedVideoItem =
-				`
-				<li class="block-video">
-					<p><em>Video</em></p>
-					${ block.embed.html }
-				</li>
-				`
-			channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
-			// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
-		}
+        // Video - part of "see"
+        if (attachment.includes('video')) {
+            let videoItem =
+            `<li class="block block-video">
+                <p><em>Video</em></p>
+                <video controls src="${block.attachment.url}"></video>
+            </li>`
+            channelBlocks.insertAdjacentHTML('beforeend', videoItem)
+        }
 
-		// Linked audio!
+        // PDF - part of "read"
+        else if (attachment.includes('pdf')) {
+            let pdfItem = 
+            `<li class="block block-pdf">
+                <picture>
+                    <source media="(max-width: 428px)" srcset="${block.image.thumb.url}">
+                    <source media="(max-width: 640px)" srcset="${block.image.large.url}">
+                    <img src="${block.image.original.url}" alt="${block.title}">
+                </picture>
+                <h3>${block.title}</h3>
+                <p><a href="${block.attachment.url}" target="_blank">View PDF ↗</a></p>
+                ${block.description_html ? block.description_html : ''}
+            </li>`
+            channelBlocks.insertAdjacentHTML('beforeend', pdfItem)
+        }
 
-		else if (embed.includes('rich')) {
-			// …up to you!
-		}
-	}
+        // Audio - part of "listen"
+        else if (attachment.includes('audio')) {
+            let audioItem =
+            `<li class="block block-audio">
+                <audio controls src="${block.attachment.url}">
+                    <source src="${block.attachment.url}" type="audio/mpeg">
+                </audio>
+            </li>`
+            channelBlocks.insertAdjacentHTML('beforeend', audioItem)
+        }
+    }
+
+    // Embedded Media (YouTube, etc.)
+    else if (block.class == 'Media') {
+        let embed = block.embed.type
+
+        // Video - part of "see"
+        if (embed.includes('video')) {
+            let linkedVideoItem =
+            `<li class="block block-video">
+                <p><em>Video</em></p>
+                ${block.embed.html}
+            </li>`
+            channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
+        }
+    }
 }
 
-
-
-// It‘s always good to credit your work:
-let renderUser = (user, container) => { // You can have multiple arguments for a function!
-	let userAddress =
-		`
-		<address>
-			<img src="${ user.avatar_image.display }">
-			<h3>${ user.first_name }</h3>
-			<p><a href="https://are.na/${ user.slug }">Are.na profile ↗</a></p>
-		</address>
-		`
-	container.insertAdjacentHTML('beforeend', userAddress)
+let renderUser = (user, container) => {
+    let userAddress =
+    `<address>
+        <img src="${user.avatar_image.display}">
+        <h3>${user.first_name}</h3>
+        <p><a href="https://are.na/${user.slug}">Are.na profile ↗</a></p>
+    </address>`
+    container.insertAdjacentHTML('beforeend', userAddress)
 }
 
-
-
-// Now that we have said what we can do, go get the data:
 fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-store' })
-	.then((response) => response.json()) // Return it as JSON data
-	.then((data) => { // Do stuff with the data
-		console.log(data) // Always good to check your response!
-		placeChannelInfo(data) // Pass the data to the first function
+    .then((response) => response.json())
+    .then((data) => {
+        console.log(data)
+        placeChannelInfo(data)
 
-		// Loop through the `contents` array (list), backwards. Are.na returns them in reverse!
-		data.contents.reverse().forEach((block) => {
-			// console.log(block) // The data for a single block
-			renderBlock(block) // Pass the single block data to the render function
-		})
+        data.contents.reverse().forEach((block) => {
+            renderBlock(block)
+        })
 
-		// Also display the owner and collaborators:
-		let channelUsers = document.getElementById('channel-users') // Show them together
-		data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
-		renderUser(data.user, channelUsers)
-	})
+        let channelUsers = document.getElementById('channel-users')
+        data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
+        renderUser(data.user, channelUsers)
+    })

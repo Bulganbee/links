@@ -1,0 +1,11 @@
+.show-see li{
+	display: none;
+}
+li.block-audio {
+	display: block;
+}
+
+audio {
+    width: 300px;
+    height: 54px;
+}

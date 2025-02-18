@@ -1,0 +1,9 @@
+.show-see li{
+	display: none;
+}
+li.block-video {
+	display: block;
+} 
+li.block-image {
+	display: block;
+}

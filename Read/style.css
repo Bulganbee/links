@@ -1,0 +1,12 @@
+.show-see li{
+	display: none;
+}
+li.block-link {
+	display: block;
+} 
+li.block-pdf {
+	display: block;
+}
+li.block-text {
+	display: block;
+}

@@ -66,10 +66,13 @@ aside {
 
 /* PDF */
 
-
-/* li.block-video {
+/* .show-see li{
 	display: none;
+}
+li.block-video {
+	display: block;
 }  */
+
 
 
 

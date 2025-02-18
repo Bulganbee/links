@@ -38,7 +38,7 @@ let renderBlock = (block) => {
 	if (block.class == 'Link') {
 		let linkItem =
 			`
-			<li>
+			<li class="block block-link">
 				
 				<picture>
 					<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
@@ -47,6 +47,7 @@ let renderBlock = (block) => {
 				</picture>
 				<h3>${ block.title }</h3>
 				${ block.description_html }
+				<p class="date">${block.created_at}</p>
 				<p><a href="${ block.source.url }">Read the article ↗</a></p>
 			</li>
 			`
@@ -78,14 +79,16 @@ let renderBlock = (block) => {
 		// …up to you!
 		let textItem = 
         `
-        <li>
+        <li class="block block-text">
            
             <h3>${ block.title }</h3>
 			<p>${block.content}</p>
-            <div>${ block.description_html ? block.description_html : '' }</div>
+            <p>${ block.description_html ? block.description_html : '' }</p>
+			<p class="dates">${block.created_at}</p>
         </li>
         `;
-    channelBlocks.insertAdjacentHTML('beforeend', textItem);
+		let textBlocks = document.getElementById('text-blocks')
+    textBlocks.insertAdjacentHTML('beforeend', textItem);
 	}
 
 	// Uploaded (not linked) media…
@@ -137,8 +140,7 @@ let renderBlock = (block) => {
        			 <audio controls src="${block.attachment.url}">
 				 <source src="${block.attachment.url}" type="audio/mpeg">
     	    	</audio>
-				 <h3>${ block.title }</h3>
-            ${ block.description_html ? block.description_html : '' }
+				
    			 	</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', audioItem)

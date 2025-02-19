@@ -26,13 +26,23 @@ let renderBlock = (block) => {
     if (block.class == 'Image') {
         let imageItem = 
         `<li class="block block-image">
-            <picture>
-                <source media="(max-width: 428px)" srcset="${block.image.thumb.url}">
-                <source media="(max-width: 640px)" srcset="${block.image.large.url}">
-                <img src="${block.image.original.url}" alt="${block.title}">
-            </picture>
-            <h3>${block.title}</h3>
-           <p> ${block.description_html ? block.description_html : ''} </p>
+            <button>
+                <picture>
+                    <source media="(max-width: 428px)" srcset="${block.image.thumb.url}">
+                    <source media="(max-width: 640px)" srcset="${block.image.large.url}">
+                    <img src="${block.image.original.url}" alt="${block.title}">
+                </picture>
+            </button>
+            <dialog>
+                <div class="dialog-content">
+                    <img src="${block.image.large.url}" alt="${block.title}">
+                    <div class="dialog-text">
+                        <h3>${block.title}</h3>
+                        <p>${block.description_html ? block.description_html : ''}</p>
+                    </div>
+                    <button class="close">Close</button>
+                </div>
+            </dialog>
         </li>`
         channelBlocks.insertAdjacentHTML('beforeend', imageItem)
     }
@@ -103,6 +113,7 @@ let renderBlock = (block) => {
         else if (attachment.includes('audio')) {
             let audioItem =
             `<li class="block block-audio">
+            <h3>${block.title}</h3>
                 <audio controls src="${block.attachment.url}">
                     <source src="${block.attachment.url}" type="audio/mpeg">
                 </audio>
@@ -137,6 +148,38 @@ let renderUser = (user, container) => {
     container.insertAdjacentHTML('beforeend', userAddress)
 }
 
+let initInteraction = () => {
+    let imageBlocks = document.querySelectorAll('.block-image')
+    imageBlocks.forEach((block) => {
+        let openButton = block.querySelector('button')
+        let dialog = block.querySelector('dialog')
+        let closeButton = dialog.querySelector('.close')
+
+        openButton.onclick = (e) => {
+            e.preventDefault() // The code was generated using Claude AI software
+            dialog.showModal()
+        }
+
+        closeButton.onclick = () => {
+            dialog.close()
+        }
+
+        // Close dialog when clicking outside
+        // The code from line 167 to 176 were generated using Claude AI software
+        dialog.onclick = (e) => {
+            const dialogDimensions = dialog.getBoundingClientRect()
+            if (
+                e.clientX < dialogDimensions.left ||
+                e.clientX > dialogDimensions.right ||
+                e.clientY < dialogDimensions.top ||
+                e.clientY > dialogDimensions.bottom
+            ) {
+                dialog.close()
+            }
+        }
+    })
+}
+
 fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-store' })
     .then((response) => response.json())
     .then((data) => {
@@ -146,6 +189,8 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
         data.contents.reverse().forEach((block) => {
             renderBlock(block)
         })
+
+        initInteraction()
 
         let channelUsers = document.getElementById('channel-users')
         data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))

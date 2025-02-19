@@ -32,7 +32,7 @@ let renderBlock = (block) => {
                 <img src="${block.image.original.url}" alt="${block.title}">
             </picture>
             <h3>${block.title}</h3>
-            ${block.description_html ? block.description_html : ''}
+           <p> ${block.description_html ? block.description_html : ''} </p>
         </li>`
         channelBlocks.insertAdjacentHTML('beforeend', imageItem)
     }
@@ -75,7 +75,7 @@ let renderBlock = (block) => {
         if (attachment.includes('video')) {
             let videoItem =
             `<li class="block block-video">
-                <p><em>Video</em></p>
+               
                 <video controls src="${block.attachment.url}"></video>
             </li>`
             channelBlocks.insertAdjacentHTML('beforeend', videoItem)
@@ -119,7 +119,7 @@ let renderBlock = (block) => {
         if (embed.includes('video')) {
             let linkedVideoItem =
             `<li class="block block-video">
-                <p><em>Video</em></p>
+               
                 ${block.embed.html}
             </li>`
             channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)

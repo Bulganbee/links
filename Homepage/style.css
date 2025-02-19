@@ -16,22 +16,45 @@ header, #quote-section {
 aside {
 	color: blueviolet;
 }
-
+header p {
+	text-align: center;
+	font-size: 20px;
+}
 #channel-title {
 	font-size: 44px;
 	text-align: center;
-	padding-top: 180px;
+	padding-top: 60px;
 }
 #channel-link {
 	text-align: center;
 
 }
 header {
-	background-color: black;
-	width: 100vw; 
-	height: 100vh; 
-	color: aliceblue;
+    background-color: black;
+    width: 100vw; 
+    height: 100vh; 
+    color: white;
+    position: relative;
 }
+
+#main-img1 {
+    position: sticky;
+    top: 12vh; 
+    z-index: 2;
+    transform: rotate(-10deg); 
+    width: 90%;
+    max-width: 90%; 
+}
+#main-img2 {
+    position: sticky;
+    top: 23vh; 
+	left: 32vh;
+    z-index: 2;
+    transform: rotate(10deg); 
+    width: 80%;
+    max-width: 90%; 
+}
+
 .quote-section {
 	width: 100vw; 
 	height: 100vh; 
@@ -97,4 +120,58 @@ li {
 
 button {
 	text-decoration: underline;
+}
+@media (min-width:1100px) {
+	#main-img1 {
+		position: sticky;
+		top: 12vh; 
+		margin-left: 6%;
+		z-index: 2;
+		transform: rotate(-10deg); 
+		width: 45%;
+	}
+	#main-img2 {
+		position: sticky;
+		top: 12vh; 
+		left: 50vh;
+		z-index: 2;
+		transform: rotate(10deg); 
+		width: 40%;
+	}
+	#quote {
+		font-size: 60px;
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-top: 20%;
+		text-align: center;
+	}
+	#quote-author {
+		font-size: 24px;
+		padding-left: 20px;
+		padding-top: 20px;
+		text-align: center;
+	}
+	ul {
+		padding-top: 20%;
+		display: flex;
+		left: 0%;
+	right: 0%;
+	justify-content: space-evenly;
+	}
+	li {
+		font-size: 52px;
+		text-align: center;
+		margin-bottom: 20px;
+		
+	}
+	header p {
+		text-align: center;
+		font-size: 30px;
+	}
+	#channel-title {
+		font-size: 72px;
+		text-align: center;
+		padding-top: 60px;
+	}
+	
 }

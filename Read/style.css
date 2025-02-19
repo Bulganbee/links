@@ -1,3 +1,24 @@
+
+/* hid the channel details */
+#channel-title {
+	font-size: 24px;
+	text-align: center;
+	margin-top: 20px;
+}
+#channel-link {
+	display: none;
+}
+#channel-description {
+	display: none;
+}
+#channel-count {
+	display: none;
+}
+#channel-users {
+	display: none;
+}
+
+/* hid the blocks, only display the important ones for this page*/
 .show-see li{
 	display: none;
 }
@@ -10,17 +31,11 @@ li.block-pdf {
 li.block-text {
 	display: block;
 }
-
-/* Text */
-.block-text {
-	color: aquamarine;
-}
-.block-text h3 {
-	font-size: 32px;
-	color: #F3F3F3;
-}
-.block-text p  + p {
-	color: blueviolet;
+.show-see img, picture {
+	aspect-ratio: 16 / 9;
+	width: 100%;
+	object-fit: cover;
+	overflow: clip; 
 }
 
 /* Links or articles */
@@ -28,6 +43,9 @@ li.block-text {
 	color: rgb(0, 0, 0);
 	font-size: 24px;
 	line-height: 140%;
+}
+.block-link h3:hover {
+	text-decoration: underline;
 }
 .block-link p {
 	font-size: 17px;
@@ -37,9 +55,52 @@ li.block-text {
 }
 .block-link {
 	margin: 10px;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 }
+
+/* PDF */
 .block-pdf {
 	margin: 10px;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
+}
+.block-pdf p {
+	font-size: 17px;
+	font-weight: 400;
+	margin-top: 7px;
+	line-height: 145%;
+}
+.block-pdf h3{
+	color: rgb(0, 0, 0);
+	font-size: 24px;
+	line-height: 140%;
+}
+.block-pdf h3:hover {
+	text-decoration: underline;
+}
+
+/* Text */
+.block-text {
+	margin: 10px;
+	margin-bottom: 30px;
+	border: 4px solid;
+	padding: 14px;
+}
+.block-text h3 {
+	font-size: 32px;
+	color: #F3F3F3;
+}
+.block-text p  + p {
+	font-size: 16px;
+	margin-top: 10px;
+} 
+.block-text p {
+	font-size: 22px;
+	line-height: 145%;
+} 
+
+@media (min-width:1100px) {
+	#channel-blocks {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
 }

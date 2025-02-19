@@ -41,15 +41,16 @@ let renderBlock = (block) => {
     else if (block.class == 'Link') {
         let linkItem =
         `<li class="block block-link">
+        <a href="${block.source.url}">
             <picture>
                 <source media="(max-width: 428px)" srcset="${block.image.thumb.url}">
                 <source media="(max-width: 640px)" srcset="${block.image.large.url}">
                 <img src="${block.image.original.url}">
             </picture>
             <h3>${block.title}</h3>
+             </a>
            <p> ${block.description_html}</p>
-            
-            <p><a href="${block.source.url}">Read the article ↗</a></p>
+          
         </li>`
         channelBlocks.insertAdjacentHTML('beforeend', linkItem)
     }
@@ -84,13 +85,15 @@ let renderBlock = (block) => {
         else if (attachment.includes('pdf')) {
             let pdfItem = 
             `<li class="block block-pdf">
+            <a href="${block.attachment.url}" target="_blank">
                 <picture>
                     <source media="(max-width: 428px)" srcset="${block.image.thumb.url}">
                     <source media="(max-width: 640px)" srcset="${block.image.large.url}">
                     <img src="${block.image.original.url}" alt="${block.title}">
                 </picture>
                 <h3>${block.title}</h3>
-                <p><a href="${block.attachment.url}" target="_blank">View PDF ↗</a></p>
+                </a>
+                <p><mark>PDF</mark></p>
                 ${block.description_html ? block.description_html : ''}
             </li>`
             channelBlocks.insertAdjacentHTML('beforeend', pdfItem)

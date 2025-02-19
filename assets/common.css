@@ -7,11 +7,18 @@ body {
 	background-color: #F2F2F2;
 	color: #0f0f0f;
 }
+main {
+	margin-bottom: 60px;
+}
 button {
 	background-color: blue;
 	color: #F3F3F3;
 	padding: 16px;
 	cursor: pointer;
+}
+#buttons-on-top {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
 }
 
 /* Media styling */
@@ -34,6 +41,15 @@ video {
 
 .block-text .dates {
 	background-color: rgba(212, 16, 176, 0.823);
+}
+
+mark {
+	background-color: #c5c5c5;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-radius: 12px;
 }
 
 

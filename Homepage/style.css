@@ -101,7 +101,7 @@ aside {
     transform: translate(-50%, -50%); 
     font-size: 32px;
     color: white;
-    background: rgba(0, 0, 0, 0.5); 
+    background: rgba(0, 0, 0, 0.8); 
     padding: 20px;
 }
 #page-links {

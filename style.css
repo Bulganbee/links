@@ -103,6 +103,8 @@ aside {
     color: white;
     background: rgba(0, 0, 0, 0.8); 
     padding: 20px;
+	width: 90%;
+	line-height: 145%;
 }
 #page-links {
 	width: 100vw; 
@@ -172,6 +174,18 @@ button {
 		font-size: 72px;
 		text-align: center;
 		padding-top: 60px;
+	}
+	aside {
+		position: absolute; 
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%); 
+		font-size: 32px;
+		color: white;
+		background: rgba(0, 0, 0, 0.8); 
+		padding: 20px;
+		width: 60%;
+		line-height: 145%;
 	}
 	
 }

@@ -59,7 +59,7 @@ let renderBlock = (block) => {
     else if (block.class == 'Text') {
         let textItem = 
         `<li class="block block-text">
-            <h3>${block.title}</h3>
+           
             <p>${block.content}</p>
             <p>${block.description_html ? block.description_html : ''}</p>
            

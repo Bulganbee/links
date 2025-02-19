@@ -1,7 +1,100 @@
 /* roots */
 
 /* Header styling */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+header, #quote-section {
+    width: 100vw;
+    height: 100vh;
+}
 /* aside is the channel description */
 aside {
 	color: blueviolet;
+}
+
+#channel-title {
+	font-size: 44px;
+	text-align: center;
+	padding-top: 180px;
+}
+#channel-link {
+	text-align: center;
+
+}
+header {
+	background-color: black;
+	width: 100vw; 
+	height: 100vh; 
+	color: aliceblue;
+}
+.quote-section {
+	width: 100vw; 
+	height: 100vh; 
+}
+#quote {
+	font-size: 60px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 40%;
+}
+#quote-author {
+	font-size: 24px;
+	padding-left: 20px;
+	padding-top: 20px;
+}
+/* #about-section {
+	width: 100vw; 
+	height: 100vh; 
+} */
+.video-container {
+    position: relative; /* Ensures the video stays within this section */
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#myVideo {
+    position: absolute; /* Stretches the video inside its container */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: -1; 
+	filter:brightness(-80%);
+	filter: grayscale(100%);
+	
+}
+
+aside {
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    font-size: 32px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5); 
+    padding: 20px;
+}
+#page-links {
+	width: 100vw; 
+	height: 100vh; 
+}
+ul {
+	padding-top: 50%;
+}
+li {
+	font-size: 52px;
+	text-align: center;
+	margin-bottom: 20px;
+	
+}
+
+button {
+	text-decoration: underline;
 }

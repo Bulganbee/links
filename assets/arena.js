@@ -128,7 +128,6 @@ let renderBlock = (block) => {
                         <p>${block.description_html ? block.description_html : ''}</p>
                     </div>
                     <button class="close">Close</button>
-
                 </div>
             </dialog>
             </li>`

@@ -76,17 +76,16 @@ dialog::backdrop {
     text-align: center;
     
     background: linear-gradient(-45deg, #ee8fde 20%, #FF0 40%, #FF0 60%, #d68080 80%);
-    background-size: 600% auto; /* Larger background to enable smooth transition */
+    background-size: 600% auto; 
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    animation: shine 8s linear infinite forwards; /* Ensures it continues forward */
-}
+    animation: shine 8s linear infinite forwards; 
 
 @keyframes shine {
-    0% { background-position: 100% 50%; } /* Starts from the far right */
-    100% { background-position: 0% 50%; } /* Moves leftward */
+    0% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
 }
 
 .block-audio dialog audio {
@@ -127,7 +126,7 @@ dialog::backdrop {
 	color: #F2F2F2;
 }
 
-/* Style the close button for better visibility on dark background */
+
 .close {
     padding: 8px 16px;
     border: 1px solid;

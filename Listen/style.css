@@ -129,13 +129,17 @@ dialog::backdrop {
 
 
 .close {
+	position: absolute;
+	top: 20%;
+	right: 6%;
+	font-size: 24px;
     padding: 8px 16px;
-    border: 1px solid;
+    /* border: 2px solid; */
     border-radius: 4px;
-    background: #333;
+    background: #000000;
     color: #F2F2F2;
     cursor: pointer;
-    z-index: 1000; /* Ensure button stays on top */
+    z-index: 1000; 
 }
 
 .close:hover {

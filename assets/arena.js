@@ -113,10 +113,24 @@ let renderBlock = (block) => {
         else if (attachment.includes('audio')) {
             let audioItem =
             `<li class="block block-audio">
+            <button>
             <h3>${block.title}</h3>
+            </button>
+                <dialog>
+                <div class="dialog-style"> 
+                 <h3>${block.title}</h3>
+                 </div>
+                <div class="dialog-content">
                 <audio controls src="${block.attachment.url}">
                     <source src="${block.attachment.url}" type="audio/mpeg">
                 </audio>
+                    <div class="dialog-text">
+                        <p>${block.description_html ? block.description_html : ''}</p>
+                    </div>
+                    <button class="close">Close</button>
+
+                </div>
+            </dialog>
             </li>`
             channelBlocks.insertAdjacentHTML('beforeend', audioItem)
         }
@@ -149,8 +163,8 @@ let renderUser = (user, container) => {
 }
 
 let initInteraction = () => {
-    let imageBlocks = document.querySelectorAll('.block-image')
-    imageBlocks.forEach((block) => {
+    let blocks = document.querySelectorAll('.block-image, .block-audio, .block-video')
+    blocks.forEach((block) => {
         let openButton = block.querySelector('button')
         let dialog = block.querySelector('dialog')
         let closeButton = dialog.querySelector('.close')
@@ -179,6 +193,8 @@ let initInteraction = () => {
         }
     })
 }
+
+
 
 fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-store' })
     .then((response) => response.json())

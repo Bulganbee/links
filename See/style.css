@@ -56,6 +56,9 @@ dialog {
     transform: none; 
     margin: 0;
 }
+.block-audio h3 {
+	
+}
 
 dialog::backdrop {
     background: rgba(0, 0, 0, 0.9);
@@ -70,7 +73,7 @@ dialog::backdrop {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    color: #F2F2F2;
+    color: #F2F2F2; 
 }
 
 .dialog-content img {
@@ -83,14 +86,14 @@ dialog::backdrop {
 }
 
 .dialog-text {
-    display: flex;
+    text-align: center;
     flex-direction: column;
     gap: 8px;
 }
 
 /* Style the close button for better visibility on dark background */
 .close {
-    align-self: flex-start;
+    text-align: center;
     padding: 8px 16px;
     border: 1px solid;
     border-radius: 4px;

@@ -82,6 +82,7 @@ dialog::backdrop {
     -webkit-text-fill-color: transparent;
 
     animation: shine 8s linear infinite forwards; 
+}
 
 @keyframes shine {
     0% { background-position: 100% 50%; } 

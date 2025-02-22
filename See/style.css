@@ -56,9 +56,6 @@ dialog {
     transform: none; 
     margin: 0;
 }
-.block-audio h3 {
-	
-}
 
 dialog::backdrop {
     background: rgba(0, 0, 0, 0.9);
@@ -80,9 +77,9 @@ dialog::backdrop {
     max-width: 100%;
     height: 100%;
     border-radius: 0px;
-    /* Optional: center the image */
     margin: 0 auto;
     display: block;
+	overflow: visible;
 }
 
 .dialog-text {
@@ -187,7 +184,6 @@ iframe, video {
 		max-width: 100%;
 		height: 100%;
 		border-radius: 4px;
-		/* Optional: center the image */
 		margin: 0 auto;
 		display: block;
 	}

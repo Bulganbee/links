@@ -120,16 +120,22 @@ let renderBlock = (block) => {
 				`
 				  <li class="block-audio">
 				<button class="button">
+                <div id="title-container"> 
                     <h3>${block.title}</h3>
 					<audio controls src="${block.attachment.url}"></audio>
+                </div>
 				</button>
+                 
 				<dialog>
+                <div class="dialog-style">
 					<h3>${block.title}</h3>
                         <p>${block.description_html ? block.description_html : ''}</p>
 					<audio controls src="${block.attachment.url}"></audio>
 					<button class="close">×</button>
+                </div>
 				</dialog>
 				</li>
+                
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
 			// More on audio: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
@@ -144,8 +150,13 @@ let renderBlock = (block) => {
         if (embed.includes('video')) {
             let linkedVideoItem =
             `<li class="block-video">
-               
+            <button class="button">
                ${block.embed.html}
+            </button>
+            <dialog>
+             ${block.embed.html}
+             <button class="close">×</button>
+				</dialog>
             </li>`
             channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
         }
@@ -196,7 +207,7 @@ let initInteraction = () => {
 	imageBlocks.forEach((block) => {
 		let openButton = block.querySelector('button')
 		let dialog = block.querySelector('dialog')
-		let closeButton = dialog.querySelector('button')
+		let closeButton = dialog.querySelector('.close')
 		
 		openButton.onclick = () => {
 			dialog.showModal()
@@ -215,7 +226,7 @@ let initInteraction = () => {
 	videoBlocks.forEach((block) => {
 		let openButton = block.querySelector('button')
 		let dialog = block.querySelector('dialog')
-		let closeButton = dialog.querySelector('button')
+		let closeButton = dialog.querySelector('.close')
 		
 		openButton.onclick = () => {
 			dialog.showModal()

@@ -121,10 +121,15 @@ let renderBlock = (block) => {
 				  <li class="block-audio">
 				<button class="button">
                 <div id="title-container"> 
+                <div id="titlediv">
                     <h3>${block.title}</h3>
-					<audio controls src="${block.attachment.url}"></audio>
+                </div>
+                <div id="audio-player"> 
+				 <audio controls src="${block.attachment.url}"></audio>
+                 </div>
                 </div>
 				</button>
+
                  
 				<dialog>
                 <div class="dialog-style">
@@ -150,9 +155,11 @@ let renderBlock = (block) => {
         if (embed.includes('video')) {
             let linkedVideoItem =
             `<li class="block-video">
+            <div id="video-div">
             <button class="button">
-               ${block.embed.html}
+            ${block.embed.html}
             </button>
+            </div>
             <dialog>
              ${block.embed.html}
              <button class="close">×</button>

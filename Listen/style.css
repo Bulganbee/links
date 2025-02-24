@@ -4,6 +4,7 @@
 /* Audio */
 li.block-audio {
 	display: block;
+	
 }
 audio {
     width: 300px;
@@ -13,15 +14,22 @@ body {
 	background-color: black;
 }
 #title-container {
-	background-color: #ee8fde;
+	background-color: #000000;
 	padding: 20px;
 	width: 45vh;
 	height: 60vh;
   	position: relative;
   	border-radius: 20px;
+	  border: 2px solid;
   	overflow: clip;
+	display: grid;
+	/* gap: 40%; */
  	justify-content: center;
+	align-items: center;
 	
+}
+#audio-player {
+	bottom: 0%;
 }
 #scroll-text {
 	color: rgb(121, 121, 121);
@@ -33,6 +41,7 @@ body {
 	display: flex;
   flex-wrap: no-wrap;
   overflow-x: auto;
+  scroll-snap-align: center; 
   scrollbar-color: red orange;
   scrollbar-width: thin;
 }
@@ -67,11 +76,21 @@ audio {
 	margin: 20px;
 	margin-bottom: 40px;
 	color: #F2F2F2;
+	align-items: center;
+
 }
 .block-audio h3 {
 	margin-bottom: 10px;
-	font-size: 24px;
+	font-size: 40px;
 	font-family: 'Nosed';
+}
+.button {
+	align-items: center;
+	text-align: center;
+}
+audio {
+	width: 40vh;
+	padding-top: 10px;
 }
 
 /* Dialog modal */

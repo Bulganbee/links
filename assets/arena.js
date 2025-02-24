@@ -70,7 +70,7 @@ let renderBlock = (block) => {
                         <h3>${block.title}</h3>
                         <p>${block.description_html ? block.description_html : ''}</p>
                     </div>
-                    <button class="close">Close</button>
+                    <button class="close">×</button>
                 </div>
             </dialog>
         </li>`

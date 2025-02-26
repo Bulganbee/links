@@ -42,7 +42,7 @@ header {
 }
 
 #title-container {
-	background-color: #000000;
+	background-image: url('../assets/images/original_c88ec21ed73fa2f3499de06f152117d2.webp');
 	padding: 20px;
 	width: 45vh;
 	height: 60vh;
@@ -127,11 +127,14 @@ audio {
 	align-items: center;
 
 }
+
 .block-audio h3 {
 	margin-bottom: 10px;
 	font-size: 40px;
 	font-family: 'Graphik Black'; 
 	text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+	padding: 5px;
 }
 #buttons-on-top {
 	font-family: 'Graphik Medium'; 
@@ -186,7 +189,7 @@ dialog::backdrop {
 .dialog-style {
 	padding-top: 40px;
 	align-items: center;
-	background-color: rgb(5, 1, 15);
+	background-image: url('../assets/images/original_c88ec21ed73fa2f3499de06f152117d2.webp');
 	border: 2px solid;
 	border-radius: 16px;
 	position: absolute;

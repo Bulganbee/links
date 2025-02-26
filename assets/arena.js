@@ -133,8 +133,10 @@ let renderBlock = (block) => {
 			let audioItem =
 				`
 				  <li class="block-audio">
+				
 				<button class="button">
                 <div id="title-container"> 
+				
                 <div id="titlediv">
                     <h3>${block.title}</h3>
                 </div>

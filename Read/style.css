@@ -1,9 +1,38 @@
+@font-face {
 
+	font-family: 'Graphik Black'; 
+
+	src: url('../assets/fonts/GraphikCompact-Black-Trial.otf') format('opentype'); 
+
+}
+@font-face {
+
+	font-family: 'Graphik Medium'; 
+
+	src: url('../assets/fonts/GraphikCompact-Medium-Trial.otf') format('opentype'); 
+
+}
+@font-face {
+
+	font-family: 'Graphik Condensed'; 
+
+	src: url('../assets/fonts/GraphikCondensed-Regular-Trial.otf') format('opentype'); 
+
+}
+
+main {
+
+	margin-top: 30px;
+	
+}
 /* hid the channel details */
 #channel-title {
+	font-family: 'Graphik Black'; 
 	font-size: 24px;
+	text-transform: uppercase;
 	text-align: center;
 	padding-top: 20px;
+	color: #ededed;
 }
 #channel-link {
 	display: none;
@@ -18,7 +47,15 @@
 	display: none;
 }
 #readbuttonid {
-	text-decoration: underline;
+	color: #CC0707;
+}
+#article-tag {
+	background-color: #c2c2c2;
+	padding: 6px;
+	border-radius: 8px;
+	color: rgb(21, 21, 21);
+	display: inline-block;
+	font-size: 16px;
 }
 
 /* hid the blocks, only display the important ones for this page*/
@@ -39,6 +76,17 @@ li.block-text {
 	width: 100%;
 	object-fit: cover;
 	overflow: clip; 
+}
+#buttons-on-top {
+	font-family: 'Graphik Medium'; 
+	font-size: 26px;
+	display: flex;
+	gap: 2%;
+	margin: 0; 
+	padding-top: 10px;
+	color: #F2F2F2;
+	z-index: 20;
+	text-align: center;
 }
 
 /* Links or articles */
@@ -83,7 +131,7 @@ li.block-text {
 
 /* Text */
 .block-text {
-	margin: 10px;
+	margin: 5px;
 	background-color: black;
 	color: #F2F2F2;
 	margin-bottom: 30px;
@@ -94,16 +142,19 @@ li.block-text {
 
 }
 .block-text h3 {
+	font-family: 'Graphik Medium'; 
 	font-size: 32px;
 	color: #F3F3F3;
 }
 .block-text p  + p {
+	font-family: 'Graphik Medium'; 
 	font-size: 16px;
 	margin-top: 10px;
 	font-style: normal;
 	font-weight: 300;
 } 
 .block-text p {
+	font-family: 'Graphik Medium'; 
 	font-size: 22px;
 	font-style: italic;
 	line-height: 145%;
@@ -111,6 +162,9 @@ li.block-text {
 	align-items: center; 
 	padding: 0%;
 } 
+header {
+	background-color: #0C0C0C;
+}
 
 @media (min-width:1100px) {
 	#channel-blocks {
@@ -120,32 +174,40 @@ li.block-text {
 	header {
 		display: flex;
 		justify-content: space-between; 
-		align-items: center; 
-		padding: 15px; 
 		padding-right: 85px;
 		padding-left: 6px;
+		padding-top: 10px;
 	}
-	
-	#channel-title {
-		font-size: 24px;
-		padding-left: 6%;
-		margin: 0; 
-	}
-	
 	#buttons-on-top {
-		text-align: center;
-		background-color: #F2F2F2;
-		font-size: 22px;
+		font-family: 'Graphik Medium'; 
+		font-size: 28px;
 		display: flex;
 		gap: 2%;
 		padding-right: 6%; 
-		margin: 0;
+		margin: 0; 
+		color: #F2F2F2;
+		z-index: 20;
 	}
+	
+	#channel-title {
+		font-family: 'Graphik Black'; 
+		font-size: 24px;
+		text-transform: uppercase;
+		/* color: #F2F2F2; */
+		text-align: center;
+		padding-top: 20px;
+		padding-left: 20px;
+		color: #ededed;
+	}
+	
 	main {
 		margin-left: 5%;
 		margin-right: 5%;
+		margin-top: 30px;
+		
 	}
 	.block-text {
+		font-family: 'Graphik Medium'; 
 		margin: 10px;
 		background-color: black;
 		color: #F2F2F2;

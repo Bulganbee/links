@@ -27,7 +27,6 @@ let placeChannelInfo = (data) => {
 }
 
 
-
 // Then our big function for specific-block-type rendering:
 let renderBlock = (block) => {
 	// To start, a shared `ul` where we’ll insert all our blocks
@@ -44,9 +43,9 @@ let renderBlock = (block) => {
 					<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
 					<img src="${ block.image.original.url }">
 				</picture>
-				<h3>${ block.title }</h3>
-				${ block.description_html }
-				<p><a href="${ block.source.url }">See the original ↗</a></p>
+				<a href="${ block.source.url }"><h3>${ block.title }</h3></a>
+	
+				<p id="article-tag">Article</p>
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
@@ -110,7 +109,22 @@ let renderBlock = (block) => {
 
 		// Uploaded PDFs!
 		else if (attachment.includes('pdf')) {
-			// …up to you!
+			let pdfItem = 
+			`
+			<li class="block-pdf">
+				
+				<picture>
+					<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
+					<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
+					<img src="${ block.image.original.url }">
+				</picture>
+				<a href="${ block.source.url }"><h3>${ block.title }</h3></a>
+				
+				<p id="article-tag">PDF</p>
+			</li>
+			`
+		channelBlocks.insertAdjacentHTML('beforeend', pdfItem)
+
 		}
 
 		// Uploaded audio!

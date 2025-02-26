@@ -1,3 +1,24 @@
+@font-face {
+
+	font-family: 'Graphik Black'; 
+
+	src: url('../assets/fonts/GraphikCompact-Black-Trial.otf') format('opentype'); 
+
+}
+@font-face {
+
+	font-family: 'Graphik Medium'; 
+
+	src: url('../assets/fonts/GraphikCompact-Medium-Trial.otf') format('opentype'); 
+
+}
+@font-face {
+
+	font-family: 'Graphik Condensed'; 
+
+	src: url('../assets/fonts/GraphikCondensed-Regular-Trial.otf') format('opentype'); 
+
+}
 .show-see li{
 	display: none;
 }
@@ -10,8 +31,9 @@ audio {
     width: 300px;
     height: 54px;
 }
-body {
-	background-color: black;
+
+header {
+	background-color: #0C0C0C;
 }
 #title-container {
 	background-color: #000000;
@@ -28,6 +50,19 @@ body {
 	align-items: center;
 	
 }
+#pagetext h2 {
+	font-size: 42px;
+	font-family: 'Graphik Black'; 
+	text-align: center;
+	animation: slideIn 1.8s ease-out forwards;
+}
+#pagetext {
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+#scrolltext {
+    visibility: hidden;
+}
 #audio-player {
 	bottom: 0%;
 }
@@ -39,19 +74,27 @@ body {
 }
 .show-see {
 	display: flex;
-  flex-wrap: no-wrap;
-  overflow-x: auto;
-  scroll-snap-align: center; 
-  scrollbar-color: red orange;
-  scrollbar-width: thin;
+	  flex-wrap: no-wrap;
+	  overflow-x: auto;
+	  padding-top: 0;
+	  padding-bottom: 10px;
+	  margin-top: 0;
+	  scrollbar-color: red rgb(62, 0, 0);
+	scrollbar-width: medium;
 }
 
+main {
+	margin-top: 30px;
+}
 
 /* hid the channel details */
 #channel-title {
+	font-family: 'Graphik Black'; 
 	font-size: 24px;
+	text-transform: uppercase;
 	text-align: center;
 	padding-top: 20px;
+	color: #ededed;
 }
 #channel-link {
 	display: none;
@@ -66,7 +109,7 @@ body {
 	display: none;
 }
 #listenbuttonid {
-	text-decoration: underline;
+	color: #CC0707;
 }
 audio {
     width: 300px;
@@ -84,8 +127,15 @@ audio {
 	font-size: 40px;
 	font-family: 'Nosed';
 }
-.button {
-	align-items: center;
+#buttons-on-top {
+	font-family: 'Graphik Medium'; 
+	font-size: 26px;
+	display: flex;
+	gap: 2%;
+	margin: 0; 
+	padding-top: 10px;
+	color: #F2F2F2;
+	z-index: 20;
 	text-align: center;
 }
 audio {
@@ -120,20 +170,7 @@ dialog::backdrop {
     font-family: 'Nosed';
     font-size: 50px;
     text-align: center;
-    
-    /* background: linear-gradient(-45deg, #ee8fde 20%, #FF0 40%, #FF0 60%, #d68080 80%);
-    background-size: 600% auto; 
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    animation: shine 8s linear infinite forwards;  */
 }
-
-/* @keyframes shine {
-    0% { background-position: 100% 50%; } 
-    100% { background-position: 0% 50%; } 
-} */
 
 .block-audio dialog audio {
 	position: absolute;
@@ -181,7 +218,6 @@ dialog::backdrop {
 	right: 0%;
 	font-size: 32px;
     padding: 8px 16px;
-    /* border: 2px solid; */
     border-radius: 20px;
     background: #000000;
     color: #F2F2F2;
@@ -202,26 +238,31 @@ dialog::backdrop {
 	header {
 		display: flex;
 		justify-content: space-between; 
-		align-items: center; 
-		padding: 15px; 
 		padding-right: 85px;
 		padding-left: 6px;
+		padding-top: 10px;
 	}
 	
 	#channel-title {
+		font-family: 'Graphik Black'; 
 		font-size: 24px;
-		padding-left: 6%;
-		margin: 0; 
+		text-transform: uppercase;
+		/* color: #F2F2F2; */
+		text-align: center;
+		padding-top: 20px;
+		padding-left: 20px;
+		color: #ededed;
 	}
 	
-	#buttons-on-top {
-		text-align: center;
-		background-color: #F2F2F2;
-		font-size: 22px;
+	  #buttons-on-top {
+		font-family: 'Graphik Medium'; 
+		font-size: 28px;
 		display: flex;
 		gap: 2%;
 		padding-right: 6%; 
-		margin: 0;
+		margin: 0; 
+		color: #F2F2F2;
+		z-index: 20;
 	}
 	/* main {
 		margin-left: 5%;
@@ -232,10 +273,136 @@ dialog::backdrop {
 		display: flex;
 	  flex-wrap: no-wrap;
 	  overflow-x: auto;
-	  padding-top: 40px;
+	  padding-top: 0px;
 	  padding-bottom: 10px;
-	  scrollbar-color: red orange;
-  	  scrollbar-width: thin;
+	  scrollbar-color: red rgb(62, 0, 0);
+		scrollbar-width: medium;
 	}
+	#scrolltext {
+		font-size: 20px;
+		padding-left: 20px;
+		animation: slideIn 0.5s ease-out forwards;
+	}
+	@keyframes slideIn {
+		0% {
+		  opacity: 0;
+		  transform: translateX(-100px);
+		}
+		100% {
+		  opacity: 1;
+		  transform: translateX(0);
+		}
+	  }
+	#pagetext {
+		display: flex;
+		align-items: center;
+		gap: 65%;
+		margin-left: 5%;
+	margin-right: 5%;
+	}
+	#pagetext h2 {
+		animation: slideIn 1.8s ease-out forwards;
+	}
+	@keyframes slideIn {
+		0% {
+		  opacity: 0;
+		  transform: translateX(-100px);
+		}
+		100% {
+		  opacity: 1;
+		  transform: translateX(0);
+		}
+	  }
+	
+	#scrolltext {
+		visibility: visible;
+	}
+	dialog {
+		padding: 0;
+		border: none;
+		border-radius: 0; 
+		width: 100vw; 
+		height: 100vh; 
+		max-width: 100vw;
+		max-height: 100vh;
+		background: rgb(2, 2, 0.4,);
+		
+		/* Fullscreen position */
+		position: fixed;
+		top: 0;
+		left: 0;
+		transform: none; 
+		margin: 0;
+	}
+	
+	dialog::backdrop {
+		background: rgba(0, 0, 0, 0.9);
+	}
+	.block-audio dialog h3 {
+		text-align: center;
+		font-family: 'Nosed';
+		font-size: 50px;
+		text-align: center;
+	}
+	
+	.block-audio dialog audio {
+		position: absolute;
+	  top: 76%;
+	  left: 50%;
+	  transform: translate(-50%);
+	}
+	.dialog-style {
+		padding-top: 40px;
+		padding-left: 20px;
+		padding-right: 20px;
+		align-items: center;
+		background-color: rgb(5, 1, 15);
+		border: 2px solid;
+		border-radius: 16px;
+		position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	  width: 30%;
+	  height: 55%;
+		
+	}
+	
+	
+	.dialog-content {
+		position: absolute;
+		  top: 50%;
+		  left: 50%;
+		height: 100%;
+		width: 100%; 
+		transform: translate(-50%, -50%);
+		color: #F2F2F2; 
+	}
+	
+	.block-audio p {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		color: #F2F2F2;
+	}
+	
+	
+	.close {
+		position: absolute;
+		top: 0%;
+		right: 0%;
+		font-size: 32px;
+		padding: 8px 16px;
+		border-radius: 20px;
+		background: #000000;
+		color: #F2F2F2;
+		cursor: pointer;
+		z-index: 1000; 
+	}
+	
+	.close:hover {
+		background: #c72323;
+	}
+	
 	
 }

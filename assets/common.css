@@ -66,6 +66,7 @@ button {
 	left: 0%;
 	right: 0%;
 	justify-content: space-evenly;
+	color: #F2F2F2;
 }
 header {
 	position: -webkit-sticky;

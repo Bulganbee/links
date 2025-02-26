@@ -12,6 +12,13 @@
 	src: url('assets/fonts/GraphikCompact-Medium-Trial.otf') format('opentype'); 
 
 }
+@font-face {
+
+	font-family: 'Graphik Condensed'; 
+
+	src: url('assets/fonts/GraphikCondensed-Regular-Trial.otf') format('opentype'); 
+
+}
 
 /* roots */
 
@@ -20,21 +27,20 @@ html, body {
     margin: 0;
     padding: 0;
     width: 100vw;
-    height: 100vh;
 	font-family: 'Graphik Medium'; 
 }
+
 
 header, #quote-section {
     width: 100vw;
     height: 100vh;
+	position: relative;
+	z-index: 100;
 }
-/* aside is the channel description */
-aside {
-	color: blueviolet;
-}
+
 #rectangle1 {
 	position: relative;
-    width:60px;
+    width:80px;
     height:160px;
 	border: 1px solid #959595;
 	top: 0;
@@ -43,7 +49,7 @@ aside {
 
 #rectangle2 {
 	position: relative;
-    width:60px;
+    width:70px;
     height:280px;
 	border: 1px solid #959595;
 	top: 0;
@@ -51,36 +57,37 @@ aside {
 }
 #rectangle3 {
 	position: relative;
-    width:60px;
+    width:80px;
     height:260px;
 	border: 1px solid #959595;
 	padding-bottom: 30px;
 }
 #rectangle4 {
 	position: relative;
-    width:60px;
+    width:70px;
     height:100px;
 	border: 1px solid #959595;
 	padding-bottom: 30px;
 }
 #redcircle {
-	position: relative;
-    width:40px;
-    height:40px;
+	position: sticky;
+    top: 70vh; 
+	left: 44vh;
+    z-index: 400;
+    width:50px;
+    height:50px;
 	border-radius: 100px;
 	background-color: #CC0707;
-	
 }
+
 #rectangle1, #rectangle2, #rectangle3, #rectangle4 {
-	
 	animation: stretch 3s infinite ease-in-out;
-	
   }
 
-  #rectangle1 { animation-delay: 2.5s; }
-#rectangle2 { animation-delay: 2s; }
-#rectangle3 { animation-delay: 3s; }
-#rectangle4 { animation-delay: 3.5s; }
+  #rectangle1 { animation-delay: 0.5s; }
+  #rectangle2 { animation-delay: 0s; }
+  #rectangle3 { animation-delay: 1.3s; }
+  #rectangle4 { animation-delay: 1s; }
 
 @keyframes stretch {
 	0%, 100% {
@@ -94,7 +101,7 @@ aside {
 #rectanglealldiv {
   display: flex;
   position: absolute;
-  top: 54%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 20px;
@@ -106,40 +113,72 @@ aside {
 }
 #secondarytext {
 	display: flex;
-	gap: 40px;
+	gap: 60px;
 	align-items: baseline;
 }
 #mediacollection {
 	font-family: 'Graphik Medium'; 
-	font-size: 22px;
+	font-size: 24px;
 }
 #channel-link {
 	font-family: 'Graphik Medium'; 
-	font-size: 22px;
+	font-size: 24px;
 }
 #maintitle-div {
   position: absolute; 
-  top: 50%;
+  top: 63%;
   left: 50%;
   transform: translate(-50%, -50%); 
-  padding: 30px;
+  /* padding: 30px; */
   align-items: center;
   justify-content: center;
-  z-index: 10;
+  z-index: 700;
 }
-header {
-	align-items: center;
-	justify-content: center;
+#felt-text {
+	animation: colorChange 2s ease-in-out infinite;
 }
+@keyframes colorChange {
+	0% {
+	  color: #CC0707; 
+	}
+	50% {
+		color: rgb(255, 0, 106);
+	}
+	100% {
+	  color: rgb(0, 0, 0); 
+	}
+  }
 
 #motion {
 	font-family: 'Graphik Black'; 
-font-size: 76px;
-}
+    font-size: 88px;
+    animation: slideIn 1.5s ease-out forwards;
+	}
+	@keyframes slideIn {
+		0% {
+		  opacity: 0;
+		  transform: translateX(-100px);
+		}
+		100% {
+		  opacity: 1;
+		  transform: translateX(0);
+		}
+	  }
 #ofnyc {
 	font-family: 'Graphik Black'; 
-	font-size: 76px;
-}
+	font-size: 88px;
+	animation: slideOut 2s ease-out forwards;
+	}
+	@keyframes slideOut {
+		0% {
+		  opacity: 0;
+		  transform: translateX(100px); 
+		}
+		100% {
+		  opacity: 1;
+		  transform: translateX(0); 
+		}
+	  }
 header p {
 	text-align: center;
 	font-size: 20px;
@@ -148,49 +187,12 @@ header p {
 	display: none;
 }
 
-/* #title-div {
-	top: 50%;
-	position: absolute;
-	z-index: 1000;
-} */
-/* #title-div p {
-	font-size: 40px;
-} */
-
-header {
-   background-color: #0C0C0C;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100vw; 
-    height: 100vh; 
-    color: white;
-    position: relative;
-}
-
-/* #main-img1 {
-    position: sticky;
-    top: 12vh; 
-    z-index: 2;
-    transform: rotate(-10deg); 
-    width: 90%;
-    max-width: 90%; 
-}
-#main-img2 {
-    position: sticky;
-    top: 23vh; 
-	left: 32vh;
-    z-index: 2;
-	position: relative;
-    transform: rotate(10deg); 
-    width: 80%;
-    max-width: 90%; 
-} */
-
 .quote-section {
 	width: 100vw; 
 	height: 100vh; 
 }
 #quote {
+	font-family: 'Graphik Black'; 
 	font-size: 60px;
 	padding-left: 20px;
 	padding-right: 20px;
@@ -201,19 +203,16 @@ header {
 	padding-left: 20px;
 	padding-top: 20px;
 }
-/* #about-section {
-	width: 100vw; 
-	height: 100vh; 
-} */
+
 .video-container {
-    position: relative; /* Ensures the video stays within this section */
+    position: relative; 
     width: 100vw;
     height: 100vh;
     overflow: hidden;
 }
 
 #myVideo {
-    position: absolute; /* Stretches the video inside its container */
+    position: absolute; 
     top: 0;
     left: 0;
     width: 100%;
@@ -224,19 +223,30 @@ header {
 	filter: grayscale(100%);
 	
 }
+#author1, #author2 {
+	font-family: 'Graphik Condensed'; 
+	font-size: 20px;
+	color: #f1f1f1;
+	margin-bottom: 10px;
+}
+aside {
+	font-size: 32px;
+    color: white;
+	line-height: 145%;
+	margin-bottom: 20px;
 
-/* aside {
+}
+#description-plus-authors {
     position: absolute; 
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); 
-    font-size: 32px;
-    color: white;
-    background: rgba(0, 0, 0, 0.8); 
+    background-color: #0C0C0C;
     padding: 20px;
 	width: 90%;
-	line-height: 145%;
-} */
+	border: 1px solid rgb(194, 194, 194);
+	
+}
 #page-links {
 	width: 100vw; 
 	height: 100vh; 
@@ -245,6 +255,7 @@ ul {
 	padding-top: 50%;
 }
 li {
+	font-family: 'Graphik Black'; 
 	font-size: 52px;
 	text-align: center;
 	margin-bottom: 20px;
@@ -254,26 +265,53 @@ li {
 button {
 	text-decoration: underline;
 }
+  
+  header {
+	background-color: #0C0C0C;
+	 background-repeat: no-repeat;
+	 background-size: cover;
+	 width: 100vw; 
+	 height: 80vh; 
+	 color: white;
+	position: absolute;
+	 z-index: 200; 
 
+ }
 
+ #feelnyc {
+	font-family: 'Graphik Black'; 
+	font-size: 200px;
+	white-space: nowrap; 
+	animation: loop 4s infinite linear;
+}
+@keyframes loop {
+	100% {
+	  -webkit-transform: translateX(-100%);
+	  transform: translateX(-100%);
+	}
+  }
+
+ #bigtext {
+	background-color:#0C0C0C;
+	color: rgb(242, 242, 242);
+	position: -webkit-sticky;
+	position: sticky;
+	z-index: 100;
+	top: 0;
+	overflow: hidden;
+  }
+main {
+	background-color:#f1f1f1;
+	z-index: 400;
+	position: relative;
+	margin-top:800px;
+}
+body {
+	background-color:#0C0C0C;
+}
 
 @media (min-width:1100px) {
-	#main-img1 {
-		position: sticky;
-		top: 12vh; 
-		margin-left: 6%;
-		z-index: 2;
-		transform: rotate(-10deg); 
-		width: 45%;
-	}
-	#main-img2 {
-		position: sticky;
-		top: 12vh; 
-		left: 50vh;
-		z-index: 2;
-		transform: rotate(10deg); 
-		width: 40%;
-	}
+	
 	#quote {
 		font-size: 60px;
 		padding-left: 20px;

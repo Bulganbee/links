@@ -1,3 +1,24 @@
+@font-face {
+
+	font-family: 'Graphik Black'; 
+
+	src: url('../assets/fonts/GraphikCompact-Black-Trial.otf') format('opentype'); 
+
+}
+@font-face {
+
+	font-family: 'Graphik Medium'; 
+
+	src: url('../assets/fonts/GraphikCompact-Medium-Trial.otf') format('opentype'); 
+
+}
+@font-face {
+
+	font-family: 'Graphik Condensed'; 
+
+	src: url('../assets/fonts/GraphikCondensed-Regular-Trial.otf') format('opentype'); 
+
+}
 /* hid the channel details */
 #channel-link {
 	display: none;
@@ -16,19 +37,56 @@
 }
 /* Active button */
 #seebuttonid {
-	text-decoration: underline;
+	color: #CC0707;
 }
 main {
-	margin: 5%;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 30px;
+}
+#pagetext h2 {
+	font-size: 45px;
+	font-family: 'Graphik Black'; 
+	text-align: center;
+	animation: slideIn 1.8s ease-out forwards;
+}
+@keyframes slideIn {
+	0% {
+	  opacity: 0;
+	  transform: translateX(-100px);
+	}
+	100% {
+	  opacity: 1;
+	  transform: translateX(0);
+	}
+  }
+#scrolltext {
+    visibility: hidden;
+}
+#buttons-on-top {
+	font-family: 'Graphik Medium'; 
+	font-size: 26px;
+	display: flex;
+	gap: 2%;
+	margin: 0; 
+	padding-top: 10px;
+	color: #F2F2F2;
+	z-index: 20;
+	text-align: center;
 }
 
 /* Title */
 #channel-title {
-	font-family: 'Paintcanz'; 
-	font-size: 44px;
-	color: #F2F2F2;
+	font-family: 'Graphik Black'; 
+	font-size: 24px;
+	text-transform: uppercase;
+	/* color: #F2F2F2; */
 	text-align: center;
 	padding-top: 20px;
+	color: #ededed;
+}
+header {
+	background-color: #0C0C0C;
 }
 /* Images and video */
 
@@ -146,32 +204,39 @@ dialog::backdrop {
 	}
 	
 	#channel-title {
-		font-family: 'Paintcanz'; 
-		font-size: 34px;
-		padding-left: 6%;
-		margin: 0; 
-		text-align: left;
-		line-height: 140%;
-		width: 100%;
+		font-family: 'Graphik Black'; 
+		font-size: 24px;
+		text-transform: uppercase;
+		/* color: #F2F2F2; */
+		text-align: center;
+		padding-top: 20px;
+		padding-left: 20px;
+		color: #ededed;
+		animation: slideIn 2s ease-out forwards;
 	}
+	@keyframes slideIn {
+		0% {
+		  opacity: 0;
+		  transform: translateX(-100px);
+		}
+		100% {
+		  opacity: 1;
+		  transform: translateX(0);
+		}
+	  }
 	
 	#buttons-on-top {
-		color: #F2F2F2;
-		text-align: center;
-		/* background-color: #F2F2F2; */
+		font-family: 'Graphik Medium'; 
 		font-size: 28px;
 		display: flex;
 		gap: 2%;
 		padding-right: 6%; 
-		margin: 0;
+		margin: 0; 
+		color: #F2F2F2;
+		z-index: 20;
 	}
-	body {
-		background-image: url('/assets/images/1.png');
-	}
-	html {
-		overflow: -moz-scrollbars-vertical; 
-		overflow-y: scroll;
-	}
+	
+	
 	dialog {
 		width: 100vw; 
 		height: 100vh; 
@@ -208,7 +273,7 @@ dialog::backdrop {
 		flex-direction: row;
 	}
 	.dialog-text {
-		border-left: 2px solid;
+		border-left: 1px solid;
 		padding-left: 20px;
 		background-color: black;
 	}
@@ -257,16 +322,16 @@ dialog::backdrop {
 		padding: 0;
 		scroll-snap-align: center; 
 		scrollbar-color: red rgb(62, 0, 0);
-		scrollbar-width: thin;
+		scrollbar-width: medium;
 	  }
 	  ul.show-see li {
 		flex: 0 0 auto; 
 		width: 59vw; 
 		object-fit: cover;
 		object-position: center;
-		height: 40vw;
+		height: 35vw;
 		margin-right: 10px; 
-		/* background-color: #333; */
+
 	  }
 
 
@@ -291,11 +356,44 @@ dialog::backdrop {
 		height: 35vw;
 		background-color: #333;
 	}
-	
-	html, body {
-		overflow-x: auto;
-		height: 100%;
+	#scrolltext {
+		font-size: 20px;
+		padding-left: 20px;
+		animation: slideIn 0.5s ease-out forwards;
+	}
+	@keyframes slideIn {
+		0% {
+		  opacity: 0;
+		  transform: translateX(-100px);
+		}
+		100% {
+		  opacity: 1;
+		  transform: translateX(0);
+		}
 	  }
+	#pagetext {
+		display: flex;
+		align-items: center;
+		gap: 73%;
+	}
+	#pagetext h2 {
+		animation: slideIn 1.8s ease-out forwards;
+	}
+	@keyframes slideIn {
+		0% {
+		  opacity: 0;
+		  transform: translateX(-100px);
+		}
+		100% {
+		  opacity: 1;
+		  transform: translateX(0);
+		}
+	  }
+	
+	#scrolltext {
+		visibility: visible;
+	}
+	
 	
 }
 

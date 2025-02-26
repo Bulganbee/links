@@ -153,6 +153,7 @@ dialog::backdrop {
     background: rgba(0, 0, 0, 0.9);
 }
 
+
 .dialog-content {
     padding: 10px;
 	padding-top: 40%;
@@ -190,6 +191,51 @@ dialog::backdrop {
 .close:hover {
     background: #444;
 } 
+
+/* new edits */
+
+/* Dialog modal */
+
+
+
+.dialog-text {
+	border-left: 1px solid;
+	padding-left: 20px;
+	background-color: black;
+}
+
+.dialog-text h3 {
+	text-align: start;
+	margin-top: 20px;
+	font-size: 20px;
+	font-weight: 400;
+	margin-bottom: 10px;
+}
+.dialog-text p {
+	color: #d9d9d9;
+	margin-top: 20px;
+	font-size: 14px;
+	font-weight: 300;
+	margin-bottom: 10px;
+	text-align: start;
+}
+
+.close {
+	position: absolute;
+	top: 10%;
+	right: 0%;
+	font-size: 18px;
+	margin: 10px;
+	border-radius: 8px;
+	background: #000000;
+	color: #F2F2F2;
+	z-index: 1000; 
+}
+
+.close:hover {
+	background: #bc1b1b;
+} 
+
 
 
 
@@ -310,7 +356,7 @@ dialog::backdrop {
 	}
 	
 	.close:hover {
-		background: #444;
+		background: #bc1b1b;
 	} 
 
 	/* Scroll */

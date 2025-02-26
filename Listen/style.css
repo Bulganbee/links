@@ -1,3 +1,4 @@
+/* Fonts downloaded from https://befonts.com/graphik-font-family.html */
 @font-face {
 
 	font-family: 'Graphik Black'; 
@@ -35,6 +36,11 @@ audio {
 header {
 	background-color: #0C0C0C;
 }
+#scrolltext {
+	font-size: 20px;
+	text-align: center;
+}
+
 #title-container {
 	background-color: #000000;
 	padding: 20px;
@@ -42,10 +48,9 @@ header {
 	height: 60vh;
   	position: relative;
   	border-radius: 20px;
-	  border: 2px solid;
+	border: 2px solid;
   	overflow: clip;
 	display: grid;
-	/* gap: 40%; */
  	justify-content: center;
 	align-items: center;
 	
@@ -125,7 +130,8 @@ audio {
 .block-audio h3 {
 	margin-bottom: 10px;
 	font-size: 40px;
-	font-family: 'Nosed';
+	font-family: 'Graphik Black'; 
+	text-align: center;
 }
 #buttons-on-top {
 	font-family: 'Graphik Medium'; 
@@ -154,7 +160,6 @@ dialog {
     max-height: 100vh;
     background: rgb(2, 2, 0.4,);
     
-    /* Fullscreen position */
     position: fixed;
     top: 0;
     left: 0;
@@ -167,7 +172,7 @@ dialog::backdrop {
 }
 .block-audio dialog h3 {
     text-align: center;
-    font-family: 'Nosed';
+    font-family: 'Graphik Black'; 
     font-size: 50px;
     text-align: center;
 }
@@ -340,7 +345,7 @@ dialog::backdrop {
 	}
 	.block-audio dialog h3 {
 		text-align: center;
-		font-family: 'Nosed';
+		font-family: 'Graphik Black'; 
 		font-size: 50px;
 		text-align: center;
 	}
@@ -360,14 +365,13 @@ dialog::backdrop {
 		border: 2px solid;
 		border-radius: 16px;
 		position: absolute;
-	  top: 50%;
-	  left: 50%;
-	  transform: translate(-50%, -50%);
-	  width: 30%;
-	  height: 55%;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+	    width: 30%;
+	    height: 55%;
 		
 	}
-	
 	
 	.dialog-content {
 		position: absolute;

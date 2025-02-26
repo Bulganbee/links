@@ -1,3 +1,4 @@
+/* Fonts downloaded from https://befonts.com/graphik-font-family.html */
 @font-face {
 
 	font-family: 'Graphik Black'; 
@@ -19,6 +20,9 @@
 	src: url('../assets/fonts/GraphikCondensed-Regular-Trial.otf') format('opentype'); 
 
 }
+main {
+	margin-top: 20px;
+}
 /* hid the channel details */
 #channel-link {
 	display: none;
@@ -39,11 +43,10 @@
 #seebuttonid {
 	color: #CC0707;
 }
-main {
-	margin-left: 5%;
-	margin-right: 5%;
-	margin-top: 30px;
+#scrolltext {
+	visibility: hidden;
 }
+
 #pagetext h2 {
 	font-size: 45px;
 	font-family: 'Graphik Black'; 
@@ -60,9 +63,8 @@ main {
 	  transform: translateX(0);
 	}
   }
-#scrolltext {
-    visibility: hidden;
-}
+
+
 #buttons-on-top {
 	font-family: 'Graphik Medium'; 
 	font-size: 26px;
@@ -80,7 +82,6 @@ main {
 	font-family: 'Graphik Black'; 
 	font-size: 24px;
 	text-transform: uppercase;
-	/* color: #F2F2F2; */
 	text-align: center;
 	padding-top: 20px;
 	color: #ededed;
@@ -192,11 +193,7 @@ dialog::backdrop {
     background: #444;
 } 
 
-/* new edits */
-
 /* Dialog modal */
-
-
 
 .dialog-text {
 	border-left: 1px solid;
@@ -235,10 +232,6 @@ dialog::backdrop {
 .close:hover {
 	background: #bc1b1b;
 } 
-
-
-
-
 
 @media (min-width:1100px) {
 	header {
@@ -347,7 +340,6 @@ dialog::backdrop {
 		font-size: 24px;
 		padding: 8px 16px;
 		margin: 24px;
-		/* border: 2px solid; */
 		border-radius: 12px;
 		background: #000000;
 		color: #F2F2F2;
@@ -440,6 +432,10 @@ dialog::backdrop {
 		visibility: visible;
 	}
 	
-	
+	main {
+		margin-left: 5%;
+		margin-right: 5%;
+		margin-top: 30px;
+	}
 }
 

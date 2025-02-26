@@ -1,3 +1,4 @@
+/* Fonts downloaded from https://befonts.com/graphik-font-family.html */
 @font-face {
 
 	font-family: 'Graphik Black'; 
@@ -108,7 +109,6 @@ header, #quote-section {
   z-index: 5; 
   height: 250px; 
   align-items: end;
-	
 	
 }
 #secondarytext {
@@ -313,11 +313,18 @@ body {
 @media (min-width:1100px) {
 	
 	#quote {
-		font-size: 60px;
-		padding-left: 20px;
-		padding-right: 20px;
+		font-size: 88px;
+		margin-left: 40px;
+		margin-right: 40px;
 		padding-top: 20%;
 		text-align: center;
+		
+	}
+	.quote-section {
+		width: 100vw; 
+		height: 100vh; 
+		padding-left: 40px;
+		padding-right: 40px;
 	}
 	#quote-author {
 		font-size: 24px;
@@ -329,8 +336,11 @@ body {
 		padding-top: 20%;
 		display: flex;
 		left: 0%;
-	right: 0%;
-	justify-content: space-evenly;
+	    right: 0%;
+	    justify-content: space-evenly;
+		margin: 40px;
+		margin-left: 10%;
+		margin-right: 10%;
 	}
 	li {
 		font-size: 52px;
@@ -338,12 +348,16 @@ body {
 		margin-bottom: 20px;
 		
 	}
-	/* header p {
-		text-align: center;
-		font-size: 30px;
-	} */
+	aside {
+		font-size: 50px;
+		color: #f1f1f1;
+	}
+	#description-plus-author {
+		margin-left: 10%;
+		margin-right: 10%;
+	}
+	
 	#channel-title {
-		font-family: 'Paintcanz'; 
 		position: relative;
   		opacity: 0;
   		transform: translateX(-100px);
@@ -359,6 +373,145 @@ body {
 		  transform: translateX(0);
 		}
 	  }
+	  #rectangle1 {
+		position: relative;
+		width:160px;
+		height:160px;
+		border: 2px solid #959595;
+		top: 0;
+		padding-bottom: 30px;
+	}
+	
+	#rectangle2 {
+		position: relative;
+		width:180px;
+		height:280px;
+		border: 2px solid #959595;
+		top: 0;
+		padding-bottom: 30px;
+	}
+	#rectangle3 {
+		position: relative;
+		width:140px;
+		height:260px;
+		border: 2px solid #959595;
+		padding-bottom: 30px;
+	}
+	#rectangle4 {
+		position: relative;
+		width:120px;
+		height:200px;
+		border: 2px solid #959595;
+		padding-bottom: 30px;
+	}
+	#rectangle5 {
+		position: relative;
+		width:120px;
+		height:200px;
+		border: 2px solid #959595;
+		padding-bottom: 30px;
+	}
+	
+	#redcircle {
+		position: sticky;
+		top: 72vh; 
+		left: 140vh;
+		z-index: 400;
+		width:50px;
+		height:50px;
+		border-radius: 100px;
+		background-color: #CC0707;
+	}
+	
+	#rectangle1, #rectangle2, #rectangle3, #rectangle4, #rectangle5 {
+		animation: stretch 3s infinite ease-in-out;
+	  }
+	
+	  #rectangle1 { animation-delay: 0.5s; }
+	  #rectangle2 { animation-delay: 0s; }
+	  #rectangle3 { animation-delay: 1.3s; }
+	  #rectangle4 { animation-delay: 1s; }
+	  #rectangle5 { animation-delay: 1.6s; }
+	
+	@keyframes stretch {
+		0%, 100% {
+		  height: 100px;
+		}
+		30% {
+		  height: 500px;
+		}
+	  }
+	
+	#rectanglealldiv {
+	  display: flex;
+	  position: absolute;
+	  top: 60%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	  padding: 20px;
+	  z-index: 5; 
+	  height: 250px; 
+	  align-items: end;
+	  
+		
+	}
+	#secondarytext {
+		display: flex;
+		gap: 250px;
+		align-items: baseline;
+	}
+	#mediacollection {
+		color: #f1f1f1;
+		font-family: 'Graphik Medium'; 
+		font-size: 40px;
+	}
+	#channel-link {
+		color: #f1f1f1;
+		font-family: 'Graphik Medium'; 
+		font-size: 40px;
+	}
+	#maintitle-div {
+	  position: absolute; 
+	  top: 63%;
+	  left: 50%;
+	  transform: translate(-50%, -50%); 
+	  /* padding: 30px; */
+	  align-items: center;
+	  justify-content: center;
+	  z-index: 700;
+	}
+	#motion {
+		color: #f1f1f1;
+		font-family: 'Graphik Black'; 
+		font-size: 200px;
+		animation: slideIn 1.5s ease-out forwards;
+		}
+		@keyframes slideIn {
+			0% {
+			  opacity: 0;
+			  transform: translateX(-100px);
+			}
+			100% {
+			  opacity: 1;
+			  transform: translateX(0);
+			}
+		  }
+	#ofnyc {
+		color: #f1f1f1;
+		font-family: 'Graphik Black'; 
+		font-size: 120px;
+		animation: slideOut 2s ease-out forwards;
+		}
+		@keyframes slideOut {
+			0% {
+			  opacity: 0;
+			  transform: translateX(100px); 
+			}
+			100% {
+			  opacity: 1;
+			  transform: translateX(0); 
+			}
+		  }
 
 
 

@@ -1,31 +1,4 @@
-@font-face {
-
-	font-family: 'Boomster'; 
-
-	src: url('../assets/fonts/BOOMSTER.otf') format('truetype'); 
-
-}
-@font-face {
-
-	font-family: 'Sprayerz'; 
-
-	src: url('../assets/fonts/SprayerzDEMO-B85.ttf') format('truetype'); 
-
-}
-@font-face {
-
-	font-family: 'Nosed'; 
-
-	src: url('../assets/fonts/NOSED___.TTF') format('truetype'); 
-
-}
-@font-face {
-
-	font-family: 'Paintcanz'; 
-
-	src: url('../assets/fonts/PaintCans.otf') format('opentype'); 
-
-}
+/* Fonts downloaded from https://befonts.com/graphik-font-family.html */
 @font-face {
 
 	font-family: 'Graphik Black'; 
@@ -40,7 +13,6 @@
 	src: url('assets/fonts/GraphikCompact-Medium-Trial.otf') format('opentype'); 
 
 }
-/* roots */
 
 /* Main */
 body {
@@ -57,7 +29,6 @@ button {
 }
 #buttons-on-top {
 	text-align: center;
-	/* background-color: #F2F2F2; */
 	margin-top: 10px;
 	margin-bottom: 30px;
 	font-size: 22px;
@@ -73,7 +44,6 @@ header {
 	position: sticky;
 	top: 0;
 	z-index: 100;
-	/* background-color: #F2F2F2; */
 }
 
 
@@ -81,7 +51,6 @@ audio {
     width: 300px;
     height: 54px;
 }
-
 
 
 mark {
@@ -93,28 +62,7 @@ mark {
 	border-radius: 12px;
 }
 
-@media (min-width:1100px) {
-	
-	/* #buttons-on-top {
-		text-align: center; */
-		/* background-color: #F2F2F2; */
-		/* margin-top: 10px;
-		margin-bottom: 30px;
-		font-size: 22px;
-		position: sticky;
-		display: flex;
-		padding-left: 3%;
-		justify-content: left;
-		color: #F2F2F2;
-    	gap: 2%;
-	} */
-	/* #channel-title {
-		font-family: 'Graphick Black';
-		text-align: left;
-		padding-top: 20px;
-		padding-left: 4%;
-	} */
-}
+
 
 
 

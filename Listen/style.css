@@ -42,6 +42,7 @@ header {
 }
 
 #title-container {
+	/* image from New York Times article called How New York Got a Glorious Throwback Roller-Skating Extravaganza */
 	background-image: url('../assets/images/original_c88ec21ed73fa2f3499de06f152117d2.webp');
 	padding: 20px;
 	width: 45vh;
@@ -189,6 +190,7 @@ dialog::backdrop {
 .dialog-style {
 	padding-top: 40px;
 	align-items: center;
+	/* image from New York Times article called How New York Got a Glorious Throwback Roller-Skating Extravaganza */
 	background-image: url('../assets/images/original_c88ec21ed73fa2f3499de06f152117d2.webp');
 	border: 2px solid;
 	border-radius: 16px;
